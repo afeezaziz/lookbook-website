@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from authlib.integrations.flask_client import OAuth
 from config import Config
 from datetime import datetime
