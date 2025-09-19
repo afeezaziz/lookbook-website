@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["python3", "gcc", "sqlite"]
+nixPkgs = ["python3", "gcc", "mariadb-client"]
 
 [phases.install]
 cmds = [
