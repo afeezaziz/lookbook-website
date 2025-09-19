@@ -3,53 +3,53 @@
 {% block title %}Look Book - Home{% endblock %}
 
 {% block content %}
-<div class="text-center mb-16">
-    <h1 class="text-5xl font-bold text-gray-800 mb-4">Welcome to Look Book</h1>
-    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover the latest fashion trends and curated style collections that inspire your personal wardrobe.</p>
-    </div>
+<section class="text-center mb-16 md:mb-20">
+    <h1 class="text-4xl md:text-6xl font-semibold text-zinc-900 mb-4 tracking-tight font-serif">Elevate Your Wardrobe</h1>
+    <p class="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto">Discover modern silhouettes, curated looks, and timeless pieces crafted for effortless elegance.</p>
+    </section>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Fashion Collection" class="rounded-xl" />
+    <article class="group rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Fashion Collection" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body items-center text-center">
-            <h2 class="card-title text-pink-600">Spring Collection</h2>
-            <p>Fresh colors and light fabrics for the perfect spring wardrobe.</p>
-            <div class="card-actions">
-                <button class="btn btn-pink">Explore</button>
+        <div class="p-8 text-center">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Spring Collection</h2>
+            <p class="text-zinc-600">Fresh colors and light fabrics for the perfect spring wardrobe.</p>
+            <div class="mt-6">
+                <button class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">Explore</button>
             </div>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1505740420928-5e560c06d30e.jpg" alt="Fashion Collection" class="rounded-xl" />
+    <article class="group rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1505740420928-5e560c06d30e.jpg" alt="Fashion Collection" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body items-center text-center">
-            <h2 class="card-title text-pink-600">Summer Essentials</h2>
-            <p>Beach-ready outfits and summer must-haves for sunny days.</p>
-            <div class="card-actions">
-                <button class="btn btn-pink">Explore</button>
+        <div class="p-8 text-center">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Summer Essentials</h2>
+            <p class="text-zinc-600">Beach-ready outfits and summer must-haves for sunny days.</p>
+            <div class="mt-6">
+                <button class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">Explore</button>
             </div>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1493246507139-91e8fad9978e.jpg" alt="Fashion Collection" class="rounded-xl" />
+    <article class="group rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1493246507139-91e8fad9978e.jpg" alt="Fashion Collection" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body items-center text-center">
-            <h2 class="card-title text-pink-600">Urban Style</h2>
-            <p>Street fashion and contemporary urban wear for modern living.</p>
-            <div class="card-actions">
-                <button class="btn btn-pink">Explore</button>
+        <div class="p-8 text-center">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Urban Style</h2>
+            <p class="text-zinc-600">Street fashion and contemporary urban wear for modern living.</p>
+            <div class="mt-6">
+                <button class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">Explore</button>
             </div>
         </div>
-    </div>
+    </article>
 </div>
 
 <div class="text-center">
-    <button class="btn btn-lg btn-pink">View All Collections</button>
+    <button class="inline-flex items-center px-6 py-3 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors shadow-sm">View All Collections</button>
 </div>
 {% endblock %}

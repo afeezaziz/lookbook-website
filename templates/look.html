@@ -3,53 +3,53 @@
 {% block title %}Look - Look Book{% endblock %}
 
 {% block content %}
-<div class="flex items-center justify-between mb-8">
+<div class="flex items-center justify-between mb-10 md:mb-12">
     <div>
-        <h1 class="text-4xl font-bold text-gray-800">Looks</h1>
-        <p class="text-gray-600">Browse and manage your fashion looks.</p>
+        <h1 class="text-4xl md:text-5xl font-semibold text-zinc-900 font-serif">Looks</h1>
+        <p class="text-zinc-600">Browse and manage your fashion looks.</p>
     </div>
-    <a href="#" class="btn btn-pink">Create Look</a>
-</div>
+    <a href="#" class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">Create Look</a>
+    </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- Placeholder cards -->
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Look" class="rounded-xl" />
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Look" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Casual Chic</h2>
-            <p>Denim jacket, white tee, black jeans.</p>
-            <div class="card-actions justify-end">
-                <a href="#" class="btn btn-outline">View</a>
+        <div class="p-6">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Casual Chic</h2>
+            <p class="text-zinc-600">Denim jacket, white tee, black jeans.</p>
+            <div class="mt-6 text-right">
+                <a href="/looks/1" class="inline-flex items-center px-4 py-2 rounded-full border border-zinc-300 text-zinc-700 hover:border-zinc-400 hover:bg-white transition-colors">View</a>
             </div>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1505740420928-5e560c06d30e.jpg" alt="Look" class="rounded-xl" />
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1505740420928-5e560c06d30e.jpg" alt="Look" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Summer Breeze</h2>
-            <p>Linen shirt, shorts, sandals.</p>
-            <div class="card-actions justify-end">
-                <a href="#" class="btn btn-outline">View</a>
+        <div class="p-6">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Summer Breeze</h2>
+            <p class="text-zinc-600">Linen shirt, shorts, sandals.</p>
+            <div class="mt-6 text-right">
+                <a href="/looks/2" class="inline-flex items-center px-4 py-2 rounded-full border border-zinc-300 text-zinc-700 hover:border-zinc-400 hover:bg-white transition-colors">View</a>
             </div>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <figure class="px-10 pt-10">
-            <img src="https://img.daisyui.com/images/stock/photo-1493246507139-91e8fad9978e.jpg" alt="Look" class="rounded-xl" />
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all overflow-hidden">
+        <figure class="px-8 pt-8">
+            <img src="https://img.daisyui.com/images/stock/photo-1493246507139-91e8fad9978e.jpg" alt="Look" class="rounded-xl w-full object-cover" />
         </figure>
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Urban Minimal</h2>
-            <p>Monochrome layers for city life.</p>
-            <div class="card-actions justify-end">
-                <a href="#" class="btn btn-outline">View</a>
+        <div class="p-6">
+            <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Urban Minimal</h2>
+            <p class="text-zinc-600">Monochrome layers for city life.</p>
+            <div class="mt-6 text-right">
+                <a href="/looks/3" class="inline-flex items-center px-4 py-2 rounded-full border border-zinc-300 text-zinc-700 hover:border-zinc-400 hover:bg-white transition-colors">View</a>
             </div>
         </div>
-    </div>
+    </article>
 </div>
 {% endblock %}

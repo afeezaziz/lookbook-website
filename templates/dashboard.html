@@ -3,40 +3,34 @@
 {% block title %}Dashboard - Look Book{% endblock %}
 
 {% block content %}
-<div class="text-center mb-10">
-    <h1 class="text-4xl font-bold text-gray-800 mb-3">Dashboard</h1>
-    <p class="text-gray-600">Overview of your activity and quick actions.</p>
+<div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-semibold text-zinc-900 mb-3 font-serif">Dashboard</h1>
+    <p class="text-zinc-600">Overview of your activity and quick actions.</p>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="card bg-white shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Looks</h2>
-            <p>Manage your curated looks.</p>
-            <div class="card-actions justify-end">
-                <a href="/look" class="btn btn-pink">View Looks</a>
-            </div>
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all p-6">
+        <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Looks</h2>
+        <p class="text-zinc-600">Manage your curated looks.</p>
+        <div class="mt-6 text-right">
+            <a href="/looks" class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">View Looks</a>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Items</h2>
-            <p>Organize wardrobe items.</p>
-            <div class="card-actions justify-end">
-                <a href="/item" class="btn btn-pink">View Items</a>
-            </div>
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all p-6">
+        <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Items</h2>
+        <p class="text-zinc-600">Organize wardrobe items.</p>
+        <div class="mt-6 text-right">
+            <a href="/items" class="inline-flex items-center px-5 py-2.5 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors">View Items</a>
         </div>
-    </div>
+    </article>
 
-    <div class="card bg-white shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title text-pink-600">Account</h2>
-            <p>Profile and settings.</p>
-            <div class="card-actions justify-end">
-                <a href="#" class="btn btn-outline">Go to Settings</a>
-            </div>
+    <article class="rounded-2xl border border-zinc-200/60 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all p-6">
+        <h2 class="text-xl font-semibold text-rose-700 mb-2 font-serif">Account</h2>
+        <p class="text-zinc-600">Profile and settings.</p>
+        <div class="mt-6 text-right">
+            <a href="#" class="inline-flex items-center px-4 py-2 rounded-full border border-zinc-300 text-zinc-700 hover:border-zinc-400 hover:bg-white transition-colors">Go to Settings</a>
         </div>
-    </div>
+    </article>
 </div>
 {% endblock %}

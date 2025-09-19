@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind config (must load BEFORE CDN script) -->
     <script>
-      tailwind = window.tailwind || {};
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'],
-              serif: ['Playfair Display', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
+      window.tailwind = {
+        config: {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'],
+                serif: ['Playfair Display', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
+              }
             }
           }
         }
@@ -44,7 +45,8 @@
                     <a href="/" class="text-xl md:text-2xl font-semibold tracking-wide text-zinc-900">
                         <span class="font-serif">Look&nbsp;Book</span>
                     </a>
-                    <div class="flex items-center gap-6">
+                    <!-- Desktop nav -->
+                    <div class="hidden md:flex items-center gap-6">
                         <a href="/" class="text-zinc-700 hover:text-rose-600 transition-colors link-underline">Home</a>
                         <a href="/dashboard" class="text-zinc-700 hover:text-rose-600 transition-colors link-underline">Dashboard</a>
                         <a href="/looks" class="text-zinc-700 hover:text-rose-600 transition-colors link-underline">Looks</a>
@@ -57,6 +59,26 @@
                             </a>
                         {% endif %}
                     </div>
+                    <!-- Mobile hamburger -->
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-zinc-300 text-zinc-700 hover:bg-white" aria-controls="mobile-menu" aria-expanded="false" id="mobileMenuButton" aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <div class="flex flex-col gap-3 pt-3 border-t border-zinc-200">
+                        <a href="/" class="px-2 py-2 rounded-md text-zinc-700 hover:text-rose-600 hover:bg-white transition-colors">Home</a>
+                        <a href="/dashboard" class="px-2 py-2 rounded-md text-zinc-700 hover:text-rose-600 hover:bg-white transition-colors">Dashboard</a>
+                        <a href="/looks" class="px-2 py-2 rounded-md text-zinc-700 hover:text-rose-600 hover:bg-white transition-colors">Looks</a>
+                        <a href="/items" class="px-2 py-2 rounded-md text-zinc-700 hover:text-rose-600 hover:bg-white transition-colors">Items</a>
+                        {% if current_user.is_authenticated %}
+                            <a href="/logout" class="px-2 py-2 rounded-md text-zinc-700 hover:text-rose-600 hover:bg-white transition-colors">Logout</a>
+                        {% else %}
+                            <a href="/login" class="mt-1 inline-flex items-center justify-center px-4 py-2 rounded-full bg-zinc-900 text-white hover:bg-zinc-800 transition-colors shadow-sm">Sign in</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </nav>
@@ -66,12 +88,35 @@
         </main>
 
         <footer class="mt-auto border-t border-zinc-200/60 bg-white/60">
-            <div class="max-w-7xl mx-auto px-4 py-10 text-center">
-                <p class="text-sm text-zinc-600">&copy; 2025 Look Book. Crafted with style.</p>
+            <div class="max-w-7xl mx-auto px-4 py-10">
+                <div class="md:flex md:items-center md:justify-between gap-6 text-center md:text-left">
+                    <a href="/" class="inline-block text-lg font-semibold text-zinc-900"><span class="font-serif">Look&nbsp;Book</span></a>
+                    <div class="flex justify-center md:justify-end gap-6 mt-4 md:mt-0 text-sm">
+                        <a href="/looks" class="text-zinc-600 hover:text-rose-600 transition-colors">Looks</a>
+                        <a href="/items" class="text-zinc-600 hover:text-rose-600 transition-colors">Items</a>
+                        <a href="/dashboard" class="text-zinc-600 hover:text-rose-600 transition-colors">Dashboard</a>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-zinc-600">&copy; 2025 Look Book. Crafted with style.</p>
+                </div>
             </div>
         </footer>
     </div>
 
+    <script>
+      (function(){
+        const btn = document.getElementById('mobileMenuButton');
+        const menu = document.getElementById('mobile-menu');
+        if(btn && menu){
+          btn.addEventListener('click', function(){
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            menu.classList.toggle('hidden');
+          });
+        }
+      })();
+    </script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>
