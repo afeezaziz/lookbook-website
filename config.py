@@ -13,7 +13,7 @@ class Config:
     db_port = os.environ.get('DB_PORT', '3306')
     db_name = os.environ.get('DB_NAME', 'lookbook')
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mariadb+pymysql://mariadb:EIy1ToVZfhxIt7uj8QkNFM4ZVVJC4ALw4q7atcCpcF23Ie15jZO0XUx4lBuOV5k4@k0wsgco0gkwcskwwo4gsock8:3306/default'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mariadb+pymysql://mariadb:EIy1ToVZfhxIt7uj8QkNFM4ZVVJC4ALw4q7atcCpcF23Ie15jZO0XUx4lBuOV5k4@104.248.150.75:33006/default'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Google OAuth2
