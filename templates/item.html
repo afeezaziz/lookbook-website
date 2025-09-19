@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Item - Look Book{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-4xl font-bold text-gray-800">Items</h1>
+        <p class="text-gray-600">Catalog of wardrobe items.</p>
+    </div>
+    <a href="#" class="btn btn-pink">Add Item</a>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <!-- Placeholder items -->
+    <div class="card bg-white shadow">
+        <div class="card-body">
+            <h2 class="card-title">White Tee</h2>
+            <p>Basics</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="card bg-white shadow">
+        <div class="card-body">
+            <h2 class="card-title">Black Jeans</h2>
+            <p>Denim</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="card bg-white shadow">
+        <div class="card-body">
+            <h2 class="card-title">Denim Jacket</h2>
+            <p>Outerwear</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="card bg-white shadow">
+        <div class="card-body">
+            <h2 class="card-title">Sneakers</h2>
+            <p>Footwear</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

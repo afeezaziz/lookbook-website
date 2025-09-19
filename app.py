@@ -1,14 +1,15 @@
 from flask import Flask, render_template, redirect, url_for, session, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from authlib.integrations.flask_client import OAuth
 from config import Config
 from datetime import datetime
+from extensions import db
+from models import User
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-db = SQLAlchemy(app)
+db.init_app(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
@@ -25,27 +26,7 @@ google = oauth.register(
     }
 )
 
-# User model
-class User(UserMixin, db.Model):
-    __tablename__ = 'users'
-
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    name = db.Column(db.String(100), nullable=False)
-    profile_picture = db.Column(db.String(255))
-    google_id = db.Column(db.String(50), unique=True)
-    access_token = db.Column(db.String(255))
-    refresh_token = db.Column(db.String(255))
-    token_expiry = db.Column(db.DateTime)
-
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
-    def __repr__(self):
-        return f'<User {self.email}>'
-
-    def get_id(self):
-        return str(self.id)
+# User model moved to models.py (imported at top)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -59,6 +40,28 @@ def home():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/looks')
+def looks():
+    return render_template('look.html')
+
+@app.route('/looks/<int:lookId>')
+def look_detail(lookId):
+    # Pass lookId to the template if needed in the future
+    return render_template('look.html', lookId=lookId)
+
+@app.route('/items')
+def items():
+    return render_template('item.html')
+
+@app.route('/items/<int:itemId>')
+def item_detail(itemId):
+    # Pass itemId to the template if needed in the future
+    return render_template('item.html', itemId=itemId)
 
 @app.route('/login/google')
 def login_google():

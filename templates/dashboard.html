@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Look Book{% endblock %}
+
+{% block content %}
+<div class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-gray-800 mb-3">Dashboard</h1>
+    <p class="text-gray-600">Overview of your activity and quick actions.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="card bg-white shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Looks</h2>
+            <p>Manage your curated looks.</p>
+            <div class="card-actions justify-end">
+                <a href="/look" class="btn btn-pink">View Looks</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-white shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Items</h2>
+            <p>Organize wardrobe items.</p>
+            <div class="card-actions justify-end">
+                <a href="/item" class="btn btn-pink">View Items</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-white shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Account</h2>
+            <p>Profile and settings.</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">Go to Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

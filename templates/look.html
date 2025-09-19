@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Look - Look Book{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-between mb-8">
+    <div>
+        <h1 class="text-4xl font-bold text-gray-800">Looks</h1>
+        <p class="text-gray-600">Browse and manage your fashion looks.</p>
+    </div>
+    <a href="#" class="btn btn-pink">Create Look</a>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Placeholder cards -->
+    <div class="card bg-white shadow-xl">
+        <figure class="px-10 pt-10">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Look" class="rounded-xl" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Casual Chic</h2>
+            <p>Denim jacket, white tee, black jeans.</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">View</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-white shadow-xl">
+        <figure class="px-10 pt-10">
+            <img src="https://img.daisyui.com/images/stock/photo-1505740420928-5e560c06d30e.jpg" alt="Look" class="rounded-xl" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Summer Breeze</h2>
+            <p>Linen shirt, shorts, sandals.</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">View</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-white shadow-xl">
+        <figure class="px-10 pt-10">
+            <img src="https://img.daisyui.com/images/stock/photo-1493246507139-91e8fad9978e.jpg" alt="Look" class="rounded-xl" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title text-pink-600">Urban Minimal</h2>
+            <p>Monochrome layers for city life.</p>
+            <div class="card-actions justify-end">
+                <a href="#" class="btn btn-outline">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
